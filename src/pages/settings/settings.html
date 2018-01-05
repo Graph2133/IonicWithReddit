@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Category</ion-label>
+        <ion-select [(ngModel)]="category" name="category">
+          <ion-option value="sports">Sports</ion-option>
+          <ion-option value="food">Food</ion-option>
+          <ion-option value="pics">Pictures</ion-option>
+          <ion-option value="worldnews">News</ion-option>
+          <ion-option value="music">Music</ion-option>
+          <ion-option value="politics">Politics</ion-option>
+          <ion-option value="gaming">Gaming</ion-option>
+          <ion-option value="art">Art</ion-option>
+          <ion-option value="videos">Videos</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Limit</ion-label>
+        <ion-select [(ngModel)]="limit" name="limit">
+          <ion-option value="5">5</ion-option>
+          <ion-option value="8">8</ion-option>
+          <ion-option value="10">10</ion-option>
+          <ion-option value="15">15</ion-option>
+          <ion-option value="20">20</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item padding>
+        <button (click)="setNewParams()" color="secondary" block ion-button icon-right>
+         Save all changes
+            <ion-icon name="md-exit"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

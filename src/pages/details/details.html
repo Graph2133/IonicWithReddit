@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <img *ngIf="item.preview" src="{{item.preview.images[0].source.url}}" />
+    <ion-card-content>
+      <ion-card-title item-center>
+        {{item.title}}
+      </ion-card-title>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" item-left></ion-icon>
+          Author
+          <ion-note item-right>
+            {{item.author}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="md-alarm" item-left></ion-icon>
+          Created
+          <ion-note item-right>
+            {{item.created_utc*1000 | date}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="md-thumbs-up" item-left></ion-icon>
+          Score
+          <ion-note item-right>
+            {{item.score}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="md-chatboxes" item-left></ion-icon>
+          Number of comments
+          <ion-note item-right>
+            {{item.num_comments}}
+          </ion-note>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+
+        <button color="secondary" ion-button icon-end item-right (click)="VisitReddit()">
+      Visit Info Page
+           <ion-icon name="md-arrow-round-forward"></ion-icon>
+        
+       </button>
+
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

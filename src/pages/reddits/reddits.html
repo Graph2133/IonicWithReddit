@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Ionic Forum</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{connected}}Category</ion-label>
+      <ion-select (ionChange)="changeCategory()" [(ngModel)]="category" name="category">
+        <ion-option value="sports">Sports</ion-option>
+        <ion-option value="food">Food</ion-option>
+        <ion-option value="pics">Pictures</ion-option>
+        <ion-option value="worldnews">News</ion-option>
+        <ion-option value="music">Music</ion-option>
+        <ion-option value="politics">Politics</ion-option>
+        <ion-option value="gaming">Gaming</ion-option>
+        <ion-option value="art">Art</ion-option>
+        <ion-option value="videos">Videos</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail *ngIf="item.data.thumbnail" item-left>
+        <img *ngIf="item.data.preview" src="{{item.data.thumbnail}}" />
+
+      </ion-thumbnail>
+      <h2>{{item.data.title}}</h2>
+      <p>
+         <ion-icon name="thumbs-up">{{item.data.score}}</ion-icon>&nbsp;&nbsp;
+         <ion-icon name="chatboxes">{{item.data.num_comments}}</ion-icon>
+      </p>
+        <button ion-button clear item-right (click)="viewItem(item.data)">VIEW</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
